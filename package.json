@@ -22,7 +22,7 @@
     "uglify": "^0.1.5"
   },
   "scripts": {
-    "start": "gulp serve"
+    "start": "gulp"
   },
   "author": "",
   "license": "ISC"
