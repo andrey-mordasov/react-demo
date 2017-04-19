@@ -5,7 +5,7 @@ var babel = require('gulp-babel');
 
 // process JS files and return the stream.
 gulp.task('js', function () {
-    return gulp.src('js/index.js')
+    return gulp.src('src/index.js')
         .pipe(babel())
         .pipe(browserify())        
         .pipe(gulp.dest('dist/'));
@@ -13,7 +13,7 @@ gulp.task('js', function () {
 
 // create a task that ensures the `js` task is complete before
 // reloading browsers
-gulp.task('js-watch', ['js'], function (done) {
+gulp.task('src-watch', ['js'], function (done) {
     browserSync.reload();
     done();
 });
@@ -30,5 +30,5 @@ gulp.task('default', ['js'], function () {
 
     // add browserSync.reload to the tasks array to make
     // all browsers reload after tasks are complete.
-    gulp.watch("js/*.js", ['js-watch']);
+    gulp.watch("src/*.js", ['src-watch']);
 });
